@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 20px;
+}
+
+/* Fixed header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(224, 222, 222, 0.87);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Title styling */
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+
+/* Items list styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(201, 124, 124, 0.23);
+    transition: transform 0.3s ease;
+}
+
+.item-box:hover {
+    transform: translateY(-5px);
+}
+
+.item-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item-details {
+    padding: 10px 0;
+}
+
+/* Price and Heart Icon Styling */
+.price-and-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-price {
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    font-size: 1.0rem;
+    color: #e63946;
+}
+
+.like-icon {
+    font-size: 1.0rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.like-icon:hover {
+    color: #e63946;
+}
+
+.item-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 5px 0;
+    color: #333;
+}
+
+.item-description {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 0.9rem;
+    color: #666;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Search box styling */
+.search-container {
+    position: relative;
+}
+
+.search-input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-box {
+    padding-left: 30px; /* Adjust the padding to make space for the icon */
+    width: 200px;
+    height: 35px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events: none; /* Prevent clicking the icon from focusing the input */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .item-box {
+        width: 49%;
+    }
+
+    .search-container {
+        text-align: center;
+    }
+
+    .search-box {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-box {
+        width: 100%;
+    }
+}
