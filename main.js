@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value.trim();
 
+            // Hash the password using SHA-256
+            const hashedPassword = CryptoJS.SHA256(password).toString();
+
             if (!username || !email || !password) {
                 alert("Please fill in all fields.");
                 return;
@@ -32,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 signup: 'signup',
                 username: username,
                 email: email,
-                password: password
+                password: hashedPassword
             };
 
             console.log("Sending Signup Data: ", formData);
@@ -54,6 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const email = document.getElementById("email").value.trim();
             const password = document.getElementById("password").value.trim();
 
+            // Hash the password using SHA-256
+            const hashedPassword = CryptoJS.SHA256(password).toString();
+
             if (!email || !password) {
                 alert("Please enter an email and password.");
                 return;
@@ -63,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const formData = {
                 login: 'login',
                 email: email,
-                password: password
+                password: hashedPassword
             };
 
             console.log("Sending Login Data: ", formData);
