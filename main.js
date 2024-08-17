@@ -1,10 +1,9 @@
 // Initialize the Telegram WebApp instance
 let tg = window.Telegram.WebApp;
+// Handle form submission
+const signupForm = document.getElementById("signup_form");
+const loginForm = document.getElementById("login_form");
 document.addEventListener("DOMContentLoaded", function () {
-    // Handle form submission
-    const signupForm = document.getElementById("signup_form");
-    const loginForm = document.getElementById("login_form");
-
     signupForm.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
 
