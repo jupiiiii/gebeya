@@ -29,28 +29,31 @@ document.addEventListener("DOMContentLoaded", function () {
         tg.close();
     });
 
-    // Collect form data
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
+    loginForm.addEventListener("submit", function (event) {
+        // Collect form data
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
 
-    // Check if either username or email is provided along with password
-    if ((!username && !email) || !password) {
-        alert("Please enter either a username or an email along with the password.");
-        return; // Stop further execution if validation fails
-    }
+        // Check if either username or email is provided along with password
+        if ((!username && !email) || !password) {
+            alert("Please enter either a username or an email along with the password.");
+            return; // Stop further execution if validation fails
+        }
 
-    // Prepare formData object
-    const formData = {
-        login: 'login',
-        username: username || null, // Set to null if not provided
-        email: email || null,       // Set to null if not provided
-        password: password
-    };
+        // Prepare formData object
+        const formData = {
+            login: 'login',
+            username: username || null, // Set to null if not provided
+            email: email || null,       // Set to null if not provided
+            password: password
+        };
 
-    // Send the data to Telegram
-    tg.sendData(JSON.stringify(formData));
+        // Send the data to Telegram
+        tg.sendData(JSON.stringify(formData));
 
-    // Optionally, close the WebApp after sending the data
-    tg.close();
+        // Optionally, close the WebApp after sending the data
+        tg.close();
+    });
+
 });
