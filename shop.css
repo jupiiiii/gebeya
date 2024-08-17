@@ -154,7 +154,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .item-box {
-        width: 30%;
+        width: 45%;
     }
 
     .search-container {
@@ -168,6 +168,6 @@ body {
 
 @media (max-width: 480px) {
     .item-box {
-        width: 30%;
+        width: 45%;
     }
 }
