@@ -1,7 +1,6 @@
+// Initialize the Telegram WebApp instance
+let tg = window.Telegram.WebApp;
 document.addEventListener("DOMContentLoaded", function () {
-    // Initialize the Telegram WebApp instance
-    let tg = window.Telegram.WebApp;
-
     // Handle form submission
     const signupForm = document.getElementById("signup_form");
     const loginForm = document.getElementById("login_form");
