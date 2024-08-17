@@ -29,23 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
         tg.close();
     });
 
-    loginForm.addEventListener("submit", function (event) {
+    loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
         // Collect form data
-        const username = document.getElementById("username").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
 
         // Check if either username or email is provided along with password
-        if ((!username && !email) || !password) {
-            alert("Please enter either a username or an email along with the password.");
+        if (!email || !password) {
+            alert("Please enter an email along with the password.");
             return; // Stop further execution if validation fails
         }
 
         // Prepare formData object
         const formData = {
             login: 'login',
-            username: username || null, // Set to null if not provided
-            email: email || null,       // Set to null if not provided
+            email: email,       // Set to null if not provided
             password: password
         };
 
