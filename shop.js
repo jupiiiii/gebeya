@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Replace with your actual API URL
-    fetch('http://127.0.0.1:5000/get_items')
+    //fetch('http://127.0.0.1:5000/get_items')
+    fetch('https://salty-sierra-35423-271972a01c8c.herokuapp.com/get_items')
         .then(response => response.json())
         .then(items => {
             console.log(items);  // Log the items to check the structure
