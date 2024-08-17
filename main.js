@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             tg.sendData(JSON.stringify(formData));
 
             // Optionally, you can close the WebApp after sending the data
-            tg.close();
+            //tg.close();
         });
     }
 
