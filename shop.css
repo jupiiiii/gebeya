@@ -54,7 +54,7 @@ body {
     /*border: 1px solid rgba(243, 102, 102, 0.22);*/
     border: rgba(74, 136, 154, 0.44);
     border-radius: 10px;
-    width: 42%;
+    width: 44%;
     margin: 15px auto;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
@@ -156,7 +156,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .item-box {
-        width: 42%;
+        width: 44%;
     }
 
     .search-container {
@@ -170,6 +170,6 @@ body {
 
 @media (max-width: 480px) {
     .item-box {
-        width: 42%;
+        width: 44%;
     }
 }
