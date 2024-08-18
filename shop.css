@@ -17,7 +17,7 @@ body {
     top: 0;
     left: 21px;
     /*right: 21px;*/
-    width: 92%;
+    width: 90%;
     height: 40px;
     background-color: var(--tg-theme-bg-color);
     border: rgba(74, 136, 154, 0.44);
