@@ -126,6 +126,7 @@ body {
 /* Search box styling */
 .search-container {
     position: relative;
+    left: 35px;
 }
 
 .search-input {
@@ -138,7 +139,7 @@ body {
 .search-box {
     padding-left: 30px; /* Adjust the padding to make space for the icon */
     width: 200px;
-    height: 35px;
+    height: 25px;
     font-size: 1rem;
     border: 1px var(--tg-theme-text-color);
     border-radius: 20px;
