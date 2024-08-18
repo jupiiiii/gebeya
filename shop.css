@@ -15,7 +15,7 @@ body {
 .header {
     position: fixed;
     top: 0;
-    left: 21px;
+    left: 18px;
     /*right: 21px;*/
     width: 90%;
     height: 40px;
@@ -34,7 +34,7 @@ body {
 .header h1 {
     margin: 0;
     left:20px;
-    font-size: 1rem;
+    font-size: 10px;
 }
 
 
@@ -157,7 +157,7 @@ body {
 /* Footer navigation */
 .bottom-navigation {
     position: fixed;
-    bottom: 0;
+    bottom: 5px;
     left: 21px;
     right: 21px;
     background-color: var(--tg-theme-bg-color);
