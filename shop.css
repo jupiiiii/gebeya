@@ -52,7 +52,7 @@ body {
     background-color: var(--tg-theme-bg-color);
     border: 1px solid rgba(243, 102, 102, 0.22);
     border-radius: 10px;
-    width: 30%;
+    width: 40%;
     margin: 15px auto;
     padding: 2px;
     box-shadow: 0 2px 5px rgba(201, 124, 124, 0.23);
@@ -153,7 +153,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .item-box {
-        width: 30%;
+        width: 40%;
     }
 
     .search-container {
@@ -167,6 +167,6 @@ body {
 
 @media (max-width: 480px) {
     .item-box {
-        width: 30%;
+        width: 40%;
     }
 }
