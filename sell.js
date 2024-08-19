@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let tg = window.Telegram.WebApp;
+    const sell_cont = document.getElementById('sell_cont')
 
-    // JavaScript to toggle between listing a new item and checking listed items
     document.getElementById('list-new-item').addEventListener('click', function () {
         document.getElementById('new-item-form').style.display = 'block';
         document.getElementById('listed-items').style.display = 'none';
@@ -12,20 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('listed-items').style.display = 'block';
     });
 
-    // Form submission
     const sellForm = document.getElementById("sell-form");
 
     sellForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent form from submitting normally
+        event.preventDefault();
 
-        // Get form data
-        const itemTitle = document.getElementById("item-title").value.trim();
-        const itemPrice = document.getElementById("item-price").value.trim();
-        const itemDescription = document.getElementById("item-description").value.trim();
-        const itemCity = document.getElementById("item-city").value.trim();
+        const formData = new FormData(sellForm);
+
+        // Validate that at least one image is selected
         const itemImages = document.getElementById("item-images").files;
-
-        // Validate: Ensure at least one image is attached
         if (itemImages.length === 0) {
             alert("Please attach at least one image.");
             return;
@@ -37,32 +32,36 @@ document.addEventListener("DOMContentLoaded", function () {
             imageFiles = imageFiles.slice(0, 5);
         }
 
-        // Prepare data to send to the bot
-        const formData = {
-            title: itemTitle,
-            price: itemPrice,
-            description: itemDescription,
-            city: itemCity,
-            images: imageFiles // Contains up to 5 images
-        };
+        // Append images to FormData
+        imageFiles.forEach(file => formData.append('images', file));
 
-        // Send the form data to the bot using tg.sendData
-        tg.sendData(JSON.stringify(formData));
+        // retrieve the chat id and append
+        const chatId = localStorage.getItem('chatId');
+        if (chatId) {
+            formData.append('chat_id', chatId);
+        }
 
-        // Show the MainButton as a "Continue" button after submission
-        tg.WebApp.MainButton.text = "Continue";
-        tg.WebApp.MainButton.show();
-
-        // Add event listener to handle "Continue" action
-        tg.WebApp.MainButton.onClick(function () {
-            // Optionally reset the form or perform other actions here
-            alert("You can now continue browsing.");
-            tg.WebApp.MainButton.hide(); // Hide the button after it's clicked
+        // Send data to backend
+        fetch('https://gebeya-f802e981fddb.herokuapp.com/list_item', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(`Error: ${data.error}`);
+            } else {
+                alert(data.chat_id);
+                alert(data.price);
+                alert(data.description);
+                alert(data.title);
+                sellForm.reset();
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Failed to list the item. Please try again.');
         });
-
-        // Show a success message or reset the form if needed
-        alert("Item successfully listed!");
-        sellForm.reset();
     });
 
     // Remove focus from the input to hide the keyboard

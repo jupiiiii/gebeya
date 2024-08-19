@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Get query parameters from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const chatId = urlParams.get('chat_id');
+    // Store chat ID in localStorage
+    localStorage.setItem('chatId', chatId);
+    
     // Replace with your actual API URL
     fetch('https://gebeya-f802e981fddb.herokuapp.com/get_items')
         .then(response => response.json())
