@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch('https://gebeya-f802e981fddb.herokuapp.com/get_items')
         .then(response => response.json())
         .then(items => {
-            console.log(items);  // Log the items to check the structure
+            //console.log(items);  // Log the items to check the structure
             const itemsList = document.querySelector('.items-list');
 
             // Clear existing items in case this is a refresh
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Inner HTML for the item box
                 itemBox.innerHTML = `
-        <img src="${images[0]}" alt="${item.item_name}">
+        <img src="static/images/${images[0]}" alt="${item.item_name}">
         <div class="item-details">
             <div class="price-and-icon">
                 <p class="item-price"><strong>${item.item_price}</strong></p>
