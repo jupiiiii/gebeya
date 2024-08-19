@@ -46,13 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
             images: imageFiles // Contains up to 5 images
         };
 
+        // Send the form data to the bot using tg.sendData
+        tg.sendData(JSON.stringify(formData));
+
         // Ensure that the WebApp doesn't close after sending data
         tg.WebApp.MainButton.setParams({
             close_on_click: false // Prevents WebApp from closing automatically
         });
-
-        // Send the form data to the bot using tg.sendData
-        tg.sendData(JSON.stringify(formData));
 
         // Show a success message or reset the form if needed
         alert("Item successfully listed!");
