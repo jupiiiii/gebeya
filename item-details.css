@@ -2,13 +2,13 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
-    padding: 20px;
+    padding: 20px 20px 60px;
 }
 
 .item-details-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 20px 30px;
     background-color: var(--tg-theme-bg-color);
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.52);
@@ -192,4 +192,45 @@ body {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Footer navigation */
+.bottom-navigation {
+    position: fixed;
+    bottom: 5px;
+    left: 21px;
+    right: 21px;
+    background-color: var(--tg-theme-bg-color);
+    border: rgba(74, 136, 154, 0.44);
+    box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
+    border-radius: 10px;
+    border-top: 1px solid rgba(53, 108, 110, 0.59);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-icon {
+    text-align: center;
+    color: var(--tg-theme-text-color);
+    font-size: 16px;
+    text-decoration: none;
+    flex: 1;
+}
+
+.nav-icon i {
+    font-size: 16px;
+    display: block;
+}
+
+.nav-icon span {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 4px;
+    display: block;
+}
+
+.nav-icon:hover {
+    color: #4b8898;
 }

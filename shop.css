@@ -15,9 +15,9 @@ body {
 .header {
     position: fixed;
     top: 0;
-    left: 18px;
+    left: 21px;
     /*right: 21px;*/
-    width: 90%;
+    width: 92%;
     height: 40px;
     background-color: var(--tg-theme-bg-color);
     border: rgba(74, 136, 154, 0.44);
@@ -25,7 +25,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     z-index: 1000;
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
 }
@@ -34,7 +34,7 @@ body {
 .header h1 {
     margin: 0;
     left:20px;
-    font-size: 10px;
+    font-size: 1rem;
 }
 
 
