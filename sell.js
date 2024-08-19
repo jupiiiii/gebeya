@@ -55,4 +55,16 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Item successfully listed!");
         sellForm.reset();
     });
+
+    // Remove focus from the input to hide the keyboard
+    sellForm.addEventListener('click', function(event) {
+        // Check if the clicked element is not an input field or textarea
+        if (!event.target.closest('input') && !event.target.closest('textarea')) {
+            // Find all input and textarea elements
+            const inputs = document.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.blur(); // Remove focus from the input to hide the keyboard
+            });
+        }
+    });
 });
