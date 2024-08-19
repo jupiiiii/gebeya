@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let tg = window.Telegram.WebApp;
 
     // JavaScript to toggle between listing a new item and checking listed items
     document.getElementById('list-new-item').addEventListener('click', function () {
@@ -41,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
             title: itemTitle,
             price: itemPrice,
             description: itemDescription,
-            city: itemCity
-            //images: imageFiles // Contains up to 5 images
+            city: itemCity,
+            images: imageFiles // Contains up to 5 images
         };
 
         // Log data to the console for debugging
