@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Remove focus from the input to hide the keyboard
-    sellForm.addEventListener('click', function(event) {
+    sell_cont.addEventListener('click', function(event) {
         // Check if the clicked element is not an input field or textarea
         if (!event.target.closest('input') && !event.target.closest('textarea')) {
             // Find all input and textarea elements
