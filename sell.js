@@ -46,8 +46,15 @@ document.addEventListener("DOMContentLoaded", function () {
             images: imageFiles // Contains up to 5 images
         };
 
-        // Log data to the console for debugging
-        console.log(formData);
+        // Disable automatic closing of the Web App after sendData
+        tg.WebApp.onEvent('send_data', function() {
+            tg.WebApp.MainButton.setParams({
+                text: "Send", // Button text
+                is_visible: true, // Keep it visible
+                is_active: true, // Keep it enabled
+                close_on_click: false // Prevent closing
+            });
+        });
 
         // Send the form data to the bot using tg.sendData
         tg.sendData(JSON.stringify(formData));
