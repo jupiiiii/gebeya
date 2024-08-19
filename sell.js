@@ -49,9 +49,15 @@ document.addEventListener("DOMContentLoaded", function () {
         // Send the form data to the bot using tg.sendData
         tg.sendData(JSON.stringify(formData));
 
-        // Ensure that the WebApp doesn't close after sending data
-        tg.WebApp.MainButton.setParams({
-            close_on_click: false // Prevents WebApp from closing automatically
+        // Show the MainButton as a "Continue" button after submission
+        tg.WebApp.MainButton.text = "Continue";
+        tg.WebApp.MainButton.show();
+
+        // Add event listener to handle "Continue" action
+        tg.WebApp.MainButton.onClick(function () {
+            // Optionally reset the form or perform other actions here
+            alert("You can now continue browsing.");
+            tg.WebApp.MainButton.hide(); // Hide the button after it's clicked
         });
 
         // Show a success message or reset the form if needed
